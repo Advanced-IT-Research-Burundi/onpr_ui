@@ -100,6 +100,7 @@ footer {
 .footer-01 ul.list-unstyled li a {
   position: relative;
   color: rgba(255, 255, 255, 1);
+  text-decoration: none;
 }
 .footer-01 ul.list-unstyled li a::after {
   content: "";
