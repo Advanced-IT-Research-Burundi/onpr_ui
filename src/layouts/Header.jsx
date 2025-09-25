@@ -8,9 +8,9 @@ export default function NavBar() {
       <div className="container">
         <a className="navbar-brand" href="#">
           <img
-            src="/img/onpr_logo.jpg"
+            src="img/onpr_logo_2.png"
             alt="Logo"
-            height="60"
+            height="80"
           />
         </a>
 

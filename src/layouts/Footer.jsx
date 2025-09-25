@@ -1,4 +1,4 @@
-import logo from "../assets/images/onpr_logo.jpg";
+import logo from "/img/onpr_logo_2.png";
 
 function Footer() {
     return (
