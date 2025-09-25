@@ -6,6 +6,7 @@ function Layout() {
     <div>
       <h1>My App</h1>
       <Outlet />
+      
     </div>
   )
 }
