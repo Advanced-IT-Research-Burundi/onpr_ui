@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import ApiService from "../services/api.js"
 import { API_CONFIG } from "../config/config.js";
-
+import Sidebar from "../layouts/SiderBar.jsx";
 import { useDispatch } from 'react-redux';
 import { setLocaleAction } from "../store/actions/appActions";
 import { useIntl } from "react-intl";
@@ -27,6 +27,7 @@ const HomeScreen = () => {
       };
   return (
     <div>
+      
       <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'fr')}>Français</button>
       <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'en')}>English</button>
       <div>
