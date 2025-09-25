@@ -7,6 +7,7 @@ function Layout() {
       <h1>My App</h1>
       <Outlet />
       <Footer />
+      
     </div>
   )
 }
