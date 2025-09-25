@@ -1,3 +1,5 @@
+import logo from "../assets/images/onpr_logo.jpg";
+
 function Footer() {
     return (
         <footer class="footer-01">
@@ -5,7 +7,7 @@ function Footer() {
                 <div class="row">
                     <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                         <h2 class="img-footer-heading">
-                            {/* <img src="images/onpr_logo.jpg" width="100" alt=""> */}
+                            <img src={logo} width="100" alt=""/>
                         </h2>
                         <p>Assemblée ordinaire du conseil des Cadres de l’Office National des Pensions et Risques Professionnels des Fonctionnaires, des Magistrats et des Agents de l’ordre Judiciaire</p>
                         <ul class="ftco-footer-social p-0">
@@ -50,8 +52,8 @@ function Footer() {
                                 <li><span class="text">B.P : 3079 Bujumbura II</span></li>
                                 <li><span class="text">E-mail : onpr_burundi@onpr.bi</span></li>
                                 <li><span class="text">Site web : www.onpr.bi</span></li>
-                                <li><span class="text align-flex">
-                                <span>Web Mail</span>
+                                <li><span class="text d-flex align-items-center gap-1">
+                                <span className="mr-2">Web Mail</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="currentColor" fill-rule="evenodd"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></g></svg>
                                 </span></li>
                             </ul>
