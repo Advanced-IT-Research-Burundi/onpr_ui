@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../assets/styles/header.css";
+import "../assets/scripts/main";
 import $ from "jquery";
 import "jquery-sticky";
 import logo from "/img/onpr_logo_transparent.png";
