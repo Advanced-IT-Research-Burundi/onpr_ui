@@ -8,11 +8,7 @@ import Sidebar from "./SiderBar"
 function Layout() {
   return (
     <div>
-      <TopHeader/>
       <Header/>
-            <Sidebar/>
-
-      <h1>My App</h1>
       <Outlet />
       <Footer />
       

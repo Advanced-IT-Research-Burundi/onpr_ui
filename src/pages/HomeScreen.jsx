@@ -28,6 +28,8 @@ const HomeScreen = () => {
   return (
     <div>
       
+                  <Sidebar/>
+
       <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'fr')}>Français</button>
       <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'en')}>English</button>
       <div>
