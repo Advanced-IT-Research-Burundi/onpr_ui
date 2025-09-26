@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import "../assets/scripts/main";
 import $ from "jquery";
@@ -84,53 +85,34 @@ export default function Header() {
               >
                 <ul className="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li>
-                    <a href="#home-section" className="nav-link">
+                    <Link to="/home" className="nav-link">
                       Accueil
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#services-section" className="nav-link">
+                    <Link to="/informations" className="nav-link">
                       Informations
-                    </a>
+                    </Link>
                   </li>
-
-                  <li className="has-children">
-                    <a
-                      href="#about-section"
-                      className="nav-link d-flex justify-content-between align-items-center gap-1"
-                    >
-                      <span>Annonces et Communiques</span>
-                      <i className="pi pi-angle-down"></i>
-                    </a>
-                    <ul className="dropdown arrow-top">
-                      <li>
-                        <a href="#team-section" className="nav-link">
-                          Team
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#pricing-section" className="nav-link">
-                          Pricing
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#faq-section" className="nav-link">
-                          FAQ
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
                   <li>
-                    <a href="#why-us-section" className="nav-link">
+                    <Link to="/announcements" className="nav-link">
+                      Annonces et Communiqués
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <Link to="/about" className="nav-link">
+                      À propos
+                    </Link>
+                  </li> */}
+                  <li>
+                    <Link to="/online-services" className="nav-link">
                       Services en ligne
-                    </a>
+                    </Link>
                   </li>
-
                   <li>
-                    <a href="#testimonials-section" className="nav-link">
+                    <Link to="/contact" className="nav-link">
                       Contactez-nous
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

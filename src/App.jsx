@@ -8,6 +8,7 @@ import NotFoundScreen from "./pages/NotFoundScreen.jsx";
 import SignInScreen from "./pages/SignInScreen.jsx";
 import InfoScreen from "./pages/InfoScreen.jsx";
 import ContactScreen from "./pages/ContactScreen.jsx";
+import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="home" element={<HomeLayout />} />
         <Route path="about" element={<AboutScreen />} />
         <Route path="informations" element={<InfoScreen />} />
+        <Route path="online-services" element={<OnlineServicesScreen />} />
         <Route path="announcements" element={<AnnouncementsScreen />} />
         <Route path="contact" element={<ContactScreen />} />
         <Route path="signin" element={<SignInScreen />} />
