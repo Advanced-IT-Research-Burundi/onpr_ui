@@ -73,15 +73,12 @@ export default function Header() {
           <div className="d-flex justify-content-between align-items-center">
             <div className="site-logo">
               <a href="index.html" className="text-black">
-                <img src={logo} alt="Image" width="80" className="img-fluid" />
+                <img src={logo} alt="Image" width="65" className="img-fluid" />
               </a>
             </div>
 
             <div className="col-12">
-              <nav
-                className="site-navigation text-right ml-auto "
-                role="navigation"
-              >
+              <nav className="site-navigation text-right ml-auto " role="navigation">
                 <ul className="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li>
                     <a href="#home-section" className="nav-link">
