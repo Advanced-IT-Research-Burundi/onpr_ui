@@ -7,7 +7,7 @@ import AboutScreen from "./pages/AboutScreen.jsx";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<HomeLayout />}>
         <Route path="/home" element={<HomeLayout />}>
           <Route path="./about" element={<AboutScreen />} />
         </Route>
