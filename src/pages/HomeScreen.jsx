@@ -1,42 +1,21 @@
-import { useEffect } from "react"
-import ApiService from "../services/api.js"
-import { API_CONFIG } from "../config/config.js";
-import Sidebar from "../layouts/SiderBar.jsx";
-import { useDispatch } from 'react-redux';
-import { setLocaleAction } from "../store/actions/appActions";
-import { useIntl } from "react-intl";
+import React from "react";
+import "./NotFoundScreen.css";
 
-
-
-const HomeScreen = () => {
-
-    const dispatch = useDispatch();
-
-    const intl = useIntl();
-
-    useEffect(() => {
-        fetchPosts();
-    }, [])
-     async function fetchPosts() {
-        const response = await ApiService.get(API_CONFIG.ENDPOINTS.GET_ALL_POSTS);
-        console.log(response);
-    }
-    const handleLocaleChange = (e, locale) => {
-        e.preventDefault();
-        dispatch(setLocaleAction(locale));
-      };
+function NotFoundScreen() {
   return (
-    <div>
-      
-                  <Sidebar/>
-
-      <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'fr')}>Français</button>
-      <button className="btn btn-primary" onClick={() => handleLocaleChange(event, 'en')}>English</button>
-      <div>
-        <h1>{intl.formatMessage({ id: 'hello' })}</h1>
+    <div className="notfound-wrapper">
+      <div className="notfound-box">
+        <h1 className="notfound-code">404</h1>
+        <h2 className="notfound-title">Page Not Found</h2>
+        <p className="notfound-message">
+          Sorry, the page you are looking for does not exist.
+        </p>
+        <a href="/" className="notfound-home">
+          Go Home
+        </a>
       </div>
     </div>
-    )
+  );
 }
 
-export default HomeScreen
+export default NotFoundScreen;
