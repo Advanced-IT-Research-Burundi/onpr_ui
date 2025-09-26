@@ -1,7 +1,7 @@
 import React from "react";
 
-function Annonce_communique() {
+function AnnouncementsScreen() {
   return <div>Annonces et Communiques</div>;
 }
 
-export default Annonce_communique;
+export default AnnouncementsScreen;

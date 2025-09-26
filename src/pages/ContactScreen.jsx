@@ -1,102 +1,164 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "primeicons/primeicons.css";
 
-export default function ContactScreen() {
-  // React state for storing form values and UI feedback
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Function triggered when the form is submitted
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // stops page refresh
-    if (!email || !password) {
-      setError("Please enter email and password");
-      return;
-    }
-    setIsLoading(true);
-
-    try {
-      // Send login request to backend
-      const response = await axios.post("login", {
-        email,
-        password,
-      });
-
-      // Save token and user in local storage
-      localStorage.setItem("token", response.data.access_token);
-      localStorage.setItem("user", JSON.stringify(response.data.data));
-
-      setIsLoading(false);
-      window.location.href = "/admin"; // redirect
-    } catch (err) {
-      setError(err?.response?.data?.message || "Login failed");
-      setIsLoading(false);
-    }
-  };
-
+export default function Contact() {
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="col-md-4">
-        <div className="card shadow p-4">
-          <h2 className="text-center mb-4">Se Connecter</h2>
+    <div className="container py-5" style={{ backgroundColor: "#ffffff" }}>
+      <div className="row">
+        {/* Left Column - Contact Info */}
+        <div className="col-md-6 mb-4">
+          <h2 className="fw-bold mb-3 text-dark">Contactez-Nous</h2>
+          <p className="text-dark">
+            Pour toute information ou demande, veuillez nous contacter via les
+            coordonnées ci-dessous.
+          </p>
 
-          {/* Error message */}
-          {error && (
-            <div className="alert alert-danger" role="alert">
-              {error}
-            </div>
-          )}
-
-          {/* Loading spinner */}
-          {isLoading && (
-            <div className="text-center mb-3">
-              <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
+          <div className="row g-3 mt-4">
+            <div className="col-12 col-sm-6">
+              <div className="d-flex align-items-start">
+                <span
+                  className="pi pi-map-marker fs-3 me-2"
+                  style={{ color: "#198754" }}
+                  aria-label="Adresse"
+                ></span>
+                <div>
+                  <h6 className="fw-bold mb-1">Adresse</h6>
+                  <p className="mb-0">
+                    Quartier ROHERO I <br />
+                    Chaussée du P.L.RWAGASORE, N°187
+                  </p>
+                </div>
               </div>
             </div>
-          )}
-
-          {/* Login Form */}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="form-control"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+            <div className="col-12 col-sm-6">
+              <div className="d-flex align-items-start">
+                <span
+                  className="pi pi-phone fs-3 me-2"
+                  style={{ color: "#198754" }}
+                  aria-label="Téléphone"
+                ></span>
+                <div>
+                  <h6 className="fw-bold mb-1">Téléphone</h6>
+                  <p className="mb-0">(+257) 22 27 6229</p>
+                </div>
+              </div>
             </div>
-
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="form-control"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+            <div className="col-12 col-sm-6">
+              <div className="d-flex align-items-start">
+                <span
+                  className="pi pi-envelope fs-3 me-2"
+                  style={{ color: "#198754" }}
+                  aria-label="Email"
+                ></span>
+                <div>
+                  <h6 className="fw-bold mb-1">Email</h6>
+                  <p className="mb-0">
+                    onpr_burundi@onpr.bi <br />
+                    onpr_burundi@yahoo.fr
+                  </p>
+                </div>
+              </div>
             </div>
+            <div className="col-12 col-sm-6">
+              <div className="d-flex align-items-start">
+                <span
+                  className="pi pi-globe fs-3 me-2"
+                  style={{ color: "#198754" }}
+                  aria-label="Site Web"
+                ></span>
+                <div>
+                  <h6 className="fw-bold mb-1">Site Web</h6>
+                  <p className="mb-0">www.onpr.bi</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary w-100"
-              disabled={isLoading}
-            >
-              Connexion
-            </button>
-          </form>
+          <h6 className="fw-bold mt-4">Réseaux Sociaux</h6>
+          <div className="d-flex gap-3">
+            <span
+              className="pi pi-facebook fs-4"
+              style={{ color: "#000000" }}
+              aria-label="Facebook"
+            ></span>
+            <span
+              className="pi pi-twitter fs-4"
+              style={{ color: "#000000" }}
+              aria-label="Twitter"
+            ></span>
+            <span
+              className="pi pi-instagram fs-4"
+              style={{ color: "#000000" }}
+              aria-label="Instagram"
+            ></span>
+          </div>
         </div>
+
+        {/* Right Column - Contact Form */}
+        <div className="col-md-6">
+          <div className="p-4 rounded" style={{ backgroundColor: "#eeeeee" }}>
+            <form>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <label className="form-label">Nom</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label className="form-label">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Votre email"
+                  />
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Téléphone</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Votre téléphone"
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Message</label>
+                <textarea
+                  className="form-control"
+                  rows="4"
+                  placeholder="Votre message"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="btn w-100"
+                style={{ backgroundColor: "#198754", color: "#ffffff" }}
+              >
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Map */}
+      <div className="mt-5">
+        <iframe
+          title="Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.051236387675!2d29.364403!3d-3.382187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c18f7fb6b6d3a1%3A0x4769f8f6d94ac648!2sONPR%20-%20Office%20National%20de%20la%20Pr%C3%A9voyance%20Sociale!5e0!3m2!1sfr!2sbi!4v1664820000000!5m2!1sfr!2sbi"
+          width="100%"
+          height="300"
+          style={{ border: "0" }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   );
