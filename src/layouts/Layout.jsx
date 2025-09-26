@@ -1,12 +1,14 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
 import Footer from "./Footer"
-import Hero from "../components/Hero"
+import Header from "./Header"
+import TopHeader from "./TopHeader"
+import Sidebar from "./SiderBar"
+
 function Layout() {
   return (
     <div>
-      <h1>My App</h1>
-      <Hero />
+      <Header/>
       <Outlet />
       <Footer />
       
