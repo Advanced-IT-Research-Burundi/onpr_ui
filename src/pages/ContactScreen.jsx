@@ -16,7 +16,7 @@ export default function Contact() {
 
           <div className="row g-3 mt-4">
             <div className="col-12 col-sm-6">
-              <div className="d-flex align-items-start">
+              <div className="d-flex justify-content-start align-items-start-0">
                 <span
                   className="pi pi-map-marker fs-3 me-2"
                   style={{ color: "#198754" }}
@@ -32,7 +32,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-12 col-sm-6">
-              <div className="d-flex align-items-start">
+              <div className="d-flex justify-content-start align-items-start-0">
                 <span
                   className="pi pi-phone fs-3 me-2"
                   style={{ color: "#198754" }}
@@ -45,7 +45,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-12 col-sm-6">
-              <div className="d-flex align-items-start">
+              <div className="d-flex justify-content-start align-items-start-0">
                 <span
                   className="pi pi-envelope fs-3 me-2"
                   style={{ color: "#198754" }}
@@ -61,7 +61,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-12 col-sm-6">
-              <div className="d-flex align-items-start">
+              <div className="d-flex justify-content-start align-items-start-0">
                 <span
                   className="pi pi-globe fs-3 me-2"
                   style={{ color: "#198754" }}
@@ -76,7 +76,7 @@ export default function Contact() {
           </div>
 
           <h6 className="fw-bold mt-4">Réseaux Sociaux</h6>
-          <div className="d-flex gap-3">
+          <div className="d-flex gap-1">
             <span
               className="pi pi-facebook fs-4"
               style={{ color: "#000000" }}
