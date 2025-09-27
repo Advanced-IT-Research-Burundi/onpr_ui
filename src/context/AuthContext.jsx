@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
         try {
           // Définir le token dans ApiService si nécessaire
           ApiService.setToken(token);
+          console.log(token)
 
           const userData = await ApiService.getCurrentUser();
           const userInfo = userData.data || userData.user || userData;

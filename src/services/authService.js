@@ -39,63 +39,6 @@ class AuthService {
     }
   }
 
-  async register(userData) {
-    try {
-      const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.REGISTER}`, {
-        method: 'POST',
-        headers: API_CONFIG.HEADERS,
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Erreur lors de l\'inscription');
-      }
-
-      return await response.json();
-    } catch (error) {
-      throw new Error(`Erreur d'inscription: ${error.message}`);
-    }
-  }
-
-  async forgotPassword(email) {
-    try {
-      const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.FORGOT_PASSWORD}`, {
-        method: 'POST',
-        headers: API_CONFIG.HEADERS,
-        body: JSON.stringify({ email }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Erreur lors de la demande de réinitialisation');
-      }
-
-      return await response.json();
-    } catch (error) {
-      throw new Error(`Erreur: ${error.message}`);
-    }
-  }
-
-  async resetPassword(token, newPassword) {
-    try {
-      const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.RESET_PASSWORD}`, {
-        method: 'POST',
-        headers: API_CONFIG.HEADERS,
-        body: JSON.stringify({ token, password: newPassword }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Erreur lors de la réinitialisation du mot de passe');
-      }
-
-      return await response.json();
-    } catch (error) {
-      throw new Error(`Erreur: ${error.message}`);
-    }
-  }
-
   async getCurrentUser() {
     try {
       const response = await httpClient.get(API_CONFIG.ENDPOINTS.USER);

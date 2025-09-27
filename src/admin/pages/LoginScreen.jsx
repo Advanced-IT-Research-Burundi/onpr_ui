@@ -1,5 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { Toast } from 'primereact/toast';
+import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
   const [formData, setFormData] = useState({
@@ -8,8 +10,9 @@ const LoginScreen = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-   const { login } = useAuth();
+  const { login } = useAuth();
+  const toast = useRef(null);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,19 +22,30 @@ const LoginScreen = () => {
     }));
   };
 
-  
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      setIsLoading(true);
       try {
-        setIsLoading(true);
         const result = await login(formData);
         if (!result.success) {
-          setError(result.error || "Erreur de connexion");
+          toast.current.show({
+            severity: 'error',
+            summary: 'Erreur',
+            detail: result.error || "Échec de la connexion",
+            life: 3000
+          });
+          return;
         }
-        setIsLoading(false);
+        navigate('/admin');
       } catch (err) {
-        setError("Erreur de connexion. Veuillez réessayer" + err.message);
+        toast.current.show({
+          severity: 'error',
+          summary: 'Erreur',
+          detail: "Erreur de connexion. Veuillez réessayer. " + err.message,
+          life: 3000
+        });
+      } finally {
         setIsLoading(false);
       }
     },
@@ -44,7 +58,7 @@ const LoginScreen = () => {
 
   return (
     <>
-      
+      <Toast ref={toast} />
       <div className="min-vh-100 bg-light d-flex align-items-center justify-content-center">
         <div className="container">
           <div className="row justify-content-center">
@@ -54,17 +68,16 @@ const LoginScreen = () => {
                   {/* En-tête */}
                   <div className="d-flex justify-content-center gap-4 text-center mb-4">
                     <div className="mb-3">
-                      <img src='img/onpr_logo_transparent.png' height={60} style={{fontSize: '4rem'}}></img>
-                      {/* <i className="pi pi-user text-primary" style={{fontSize: '4rem'}}></i> */}
+                      <img src='img/onpr_logo_transparent.png' height={60} style={{ fontSize: '4rem' }} />
                     </div>
                     <div>
-                        <h2 className="card-title text-dark fw-bold">Connexion</h2>
-                        <p className="text-muted">Accédez à votre compte</p>
-                    </div>                    
+                      <h2 className="card-title text-dark fw-bold">Connexion</h2>
+                      <p className="text-muted">Accédez à votre compte</p>
+                    </div>
                   </div>
 
                   {/* Formulaire */}
-                  <div onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit}>
                     {/* Champ Email */}
                     <div className="mb-3">
                       <label htmlFor="email" className="form-label fw-semibold">
@@ -110,15 +123,12 @@ const LoginScreen = () => {
                       </div>
                     </div>
 
-                    
-
                     {/* Bouton de connexion */}
                     <div className="d-grid mb-3">
                       <button
-                        type="button"
+                        type="submit"
                         className="btn btn-primary btn-lg rounded-3"
                         disabled={isLoading}
-                        onClick={handleSubmit}
                       >
                         {isLoading ? (
                           <>
@@ -133,12 +143,10 @@ const LoginScreen = () => {
                         )}
                       </button>
                     </div>
-
-
-                  </div>
+                  </form>
                 </div>
               </div>
-              
+
               {/* Footer */}
               <div className="text-center mt-4">
                 <p className="text-muted small">

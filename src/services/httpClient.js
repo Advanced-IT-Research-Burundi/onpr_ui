@@ -1,13 +1,16 @@
 import {API_CONFIG} from '../config/config.js';
+import tokenManager from './tokenManager.js';
 
 class HttpClient {
   constructor() {
     this.baseURL = API_CONFIG.BASE_URL;
   }
 
-  getDefaultHeaders() {
+
+   getDefaultHeaders() {
     return {
       ...API_CONFIG.HEADERS,
+      ...tokenManager.getAuthHeaders(),
     };
   }
 
