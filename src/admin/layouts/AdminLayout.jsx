@@ -11,17 +11,7 @@ const AdminLayout = ({ children }) => {
   };
 
   return (
-    <>
-      {/* Bootstrap CSS */}
-      <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" 
-        rel="stylesheet" 
-      />
-      {/* PrimeIcons CSS */}
-      <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/6.0.1/primeicons.min.css" 
-        rel="stylesheet" 
-      />
+    <>      
 
       <div className="d-flex">
         {/* Sidebar */}

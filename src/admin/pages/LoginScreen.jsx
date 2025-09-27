@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useAuth } from '../../context/AuthContext.jsx';
 
 const LoginScreen = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const LoginScreen = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+   const { login } = useAuth();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -16,17 +19,24 @@ const LoginScreen = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    // Simulation d'une requête de connexion
-    setTimeout(() => {
-      console.log('Données de connexion:', formData);
-      setIsLoading(false);
-      alert('Connexion simulée réussie !');
-    }, 2000);
-  };
+  
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      try {
+        setIsLoading(true);
+        const result = await login(formData);
+        if (!result.success) {
+          setError(result.error || "Erreur de connexion");
+        }
+        setIsLoading(false);
+      } catch (err) {
+        setError("Erreur de connexion. Veuillez réessayer" + err.message);
+        setIsLoading(false);
+      }
+    },
+    [formData, login]
+  );
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);

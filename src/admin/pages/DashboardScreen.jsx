@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = () => {
+const DashboardScreen = () => {
     return (
         <div>
                 {/* En-tête de la page */}
@@ -128,4 +128,4 @@ const Dashboard = () => {
     );
 }
 
-export default Dashboard;
+export default DashboardScreen;

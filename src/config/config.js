@@ -1,7 +1,8 @@
 export const API_CONFIG = {
   BASE_URL: "https://jsonplaceholder.typicode.com",
-  HOST_URL: "192.168.122.1",
   ENDPOINTS: {
+    LOGIN: "/login",
+    LOGOUT: "/logout",
     GET_ALL_POSTS: "/posts",
     
   },
