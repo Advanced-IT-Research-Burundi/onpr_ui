@@ -10,6 +10,7 @@ import InfoScreen from "./pages/InfoScreen.jsx";
 import ContactScreen from "./pages/ContactScreen.jsx";
 import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
 import LoginScreen from "./admin/pages/LoginScreen.jsx";
+import AdminLayout from "./admin/layouts/AdminLayout.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="*" element={<NotFoundScreen />} />
       </Route>
         <Route path="login" element={<LoginScreen />} />
+        <Route path="/admin/*" element={<AdminLayout />} />
     </Routes>
   );
 }
