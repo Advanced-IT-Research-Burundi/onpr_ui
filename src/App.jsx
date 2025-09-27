@@ -9,6 +9,7 @@ import SignInScreen from "./pages/SignInScreen.jsx";
 import InfoScreen from "./pages/InfoScreen.jsx";
 import ContactScreen from "./pages/ContactScreen.jsx";
 import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
+import LoginScreen from "./admin/pages/LoginScreen.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="signin" element={<SignInScreen />} />
         <Route path="*" element={<NotFoundScreen />} />
       </Route>
+        <Route path="login" element={<LoginScreen />} />
     </Routes>
   );
 }
