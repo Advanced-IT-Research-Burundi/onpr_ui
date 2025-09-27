@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import { useAuth } from '../../context/AuthContext.jsx';
 
 const Header = ({ onToggleSidebar, sidebarCollapsed }) => {
   const [showProfile, setShowProfile] = useState(false);
+
+  const { logout } = useAuth();
+
+   const handleLogout = () => {
+    logout();
+    setShowProfile(false);
+  };
 
   return (
     <header 
@@ -73,9 +81,9 @@ const Header = ({ onToggleSidebar, sidebarCollapsed }) => {
               
              
               
-              <a className="dropdown-item py-2 text-danger" href="#">
+              <button className="dropdown-item py-2 text-danger" onClick={handleLogout}>
                 <i className="pi pi-sign-out me-3"></i>Déconnexion
-              </a>
+              </button>
             </div>
           )}
         </div>

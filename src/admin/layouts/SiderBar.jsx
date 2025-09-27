@@ -1,50 +1,53 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = ({ isCollapsed }) => {
   const [activeItem, setActiveItem] = useState('dashboard');
+  const navigate = useNavigate();
 
   const menuItems = [
     {
       id: 'dashboard',
       title: 'Tableau de bord',
       icon: 'pi pi-home',
-      path: '/dashboard'
+      path: '/admin/dashboard'
     },
     {
       id: 'gallery-photos',
       title: 'Galerie Photos',
       icon: 'pi pi-images',
-      path: '/gallery-photos'
+      path: '/admin/gallery-photos'
     },
     {
       id: 'gallery-videos',
       title: 'Galerie Vidéos',
       icon: 'pi pi-video',
-      path: '/gallery-videos'
+      path: '/admin/gallery-videos'
     },
     {
       id: 'advertising',
       title: 'Espace Publicitaire',
       icon: 'pi pi-megaphone',
-      path: '/advertising'
+      path: '/admin/advertising'
     },
     {
       id: 'documents',
       title: 'Documents',
       icon: 'pi pi-file-pdf',
-      path: '/documents'
+      path: '/admin/documents'
     },
     {
       id: 'news',
       title: 'Brèves ONPR',
       icon: 'pi pi-bookmark',
-      path: '/news'
+      path: '/admin/news'
     }
   ];
 
-  const handleItemClick = (itemId) => {
-    setActiveItem(itemId);
-    console.log(`Navigation vers: ${itemId}`);
+  const handleItemClick = (item) => {
+    setActiveItem(item.id);
+    // console.log(`Navigation vers: ${item.path}`);
+    navigate(item.path);
   };
 
   return (
@@ -98,7 +101,7 @@ const SideBar = ({ isCollapsed }) => {
                       ? 'bg-primary text-white' 
                       : 'text-white-50'
                   }`}
-                  onClick={() => handleItemClick(item.id)}
+                  onClick={() => handleItemClick(item)}
                   style={{
                     backgroundColor: activeItem === item.id ? '' : 'transparent',
                     transition: 'all 0.2s ease'
