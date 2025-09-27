@@ -37,8 +37,8 @@
 }
 
 #sidebar {
-  min-width: 270px;
-  max-width: 270px;
+  /* min-width: 270px;
+  max-width: 270px; */
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -68,6 +68,7 @@
 #sidebar ul li > ul li a {
   border-bottom: 1px solid transparent;
 }
+
 #sidebar ul li > ul li a span {
   color: #000;
 }
@@ -77,6 +78,11 @@
   color: black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+#sidebar ul li a:hover {
+  color: #CE1126;
+}
+
 #sidebar ul li a span {
   color: #fff;
 }
