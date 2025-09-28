@@ -42,11 +42,11 @@ const Header = ({ onToggleSidebar, sidebarCollapsed }) => {
         {/* Section droite - Profil utilisateur */}
         <div className="dropdown">
           <button
-            className="btn btn-link border-0 p-0 d-flex align-items-center"
+            className="btn  border-0 p-0 d-flex align-items-center"
             onClick={() => setShowProfile(!showProfile)}
           >
             <img 
-              src="img/onpr_logo_transparent.png" 
+              src="/img/onpr_logo_transparent.png" 
               alt="Admin" 
               className="rounded-circle me-2"
               width="40" 
@@ -65,7 +65,7 @@ const Header = ({ onToggleSidebar, sidebarCollapsed }) => {
               <div className="dropdown-header">
                 <div className="d-flex align-items-center">
                   <img 
-                    src="img/onpr_logo_transparent.png" 
+                    src="/img/onpr_logo_transparent.png" 
                     alt="Admin" 
                     className="rounded-circle me-3"
                     width="50" 

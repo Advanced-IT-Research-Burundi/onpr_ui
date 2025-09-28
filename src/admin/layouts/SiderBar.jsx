@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const SideBar = ({ isCollapsed }) => {
   const [activeItem, setActiveItem] = useState('dashboard');
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const SideBar = ({ isCollapsed }) => {
              <div className='d-flex justify-content-center g-4'>
                 <div className="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" 
                    style={{width: '50px', height: '50px'}}>                   
-                <img src='img/onpr_logo_transparent.png' height={'45px'}></img>
+                <img src='/img/onpr_logo_transparent.png' height={'45px'}></img>
               </div>
               <div className='d-flex flex-column'>
                 <h6 className="mb-0 fw-bold">O.N.P.R</h6>
@@ -82,7 +83,7 @@ const SideBar = ({ isCollapsed }) => {
             <div className="w-100 d-flex justify-content-center">
               <div className="bg-white rounded-circle d-flex align-items-center justify-content-center" 
                    style={{width: '50px', height: '50px'}}>
-                <img src='img/onpr_logo_transparent.png' height={'45px'}></img>
+                <img src='/img/onpr_logo_transparent.png' height={'45px'}></img>
               </div>
             </div>
           )}
