@@ -83,6 +83,16 @@ $(function() {
 				}
 	    }
 		});
+
+
+		// close offcanvas when clicking the close icon inside the mobile menu
+        $('body').on('click', '.site-mobile-menu-close', function(e) {
+            e.preventDefault();
+            if ($('body').hasClass('offcanvas-menu')) {
+                $('body').removeClass('offcanvas-menu');
+                $('.js-menu-toggle').removeClass('active');
+            }
+        });
 	}; 
 	siteMenuClone();
 

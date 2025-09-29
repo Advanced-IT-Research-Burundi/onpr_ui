@@ -41,7 +41,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sidebar-container bg-light border-end">
+    <div className="sidebar-container bg-light col-3">
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid flex-column align-items-stretch">
           {sidebarData.map((section, index) => (
