@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "primeicons/primeicons.css";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
@@ -75,23 +76,33 @@ export default function Contact() {
             </div>
           </div>
 
-          <h6 className="fw-bold mt-4">Réseaux Sociaux</h6>
-          <div className="d-flex gap-1">
-            <span
-              className="pi pi-facebook fs-4"
-              style={{ color: "#000000" }}
-              aria-label="Facebook"
-            ></span>
-            <span
-              className="pi pi-twitter fs-4"
-              style={{ color: "#000000" }}
-              aria-label="Twitter"
-            ></span>
-            <span
-              className="pi pi-instagram fs-4"
-              style={{ color: "#000000" }}
-              aria-label="Instagram"
-            ></span>
+          <h6 className="fw-bold my-3">Réseaux Sociaux</h6>
+          <div
+            className="d-flex gap-5 justify-content-around
+          mt-2"
+            style={{ maxWidth: "100px" }}
+          >
+            <Link to="https://www.facebook.com/onpr.bi">
+              <span
+                className="pi pi-facebook fs-4"
+                style={{ color: "#198754" }}
+                aria-label="Facebook"
+              ></span>
+            </Link>
+            <Link to="https://twitter.com/onpr_bi">
+              <span
+                className="pi pi-twitter fs-4"
+                style={{ color: "#198754" }}
+                aria-label="Twitter"
+              ></span>
+            </Link>
+            <Link to="https://www.instagram.com/onpr.bi">
+              <span
+                className="pi pi-instagram fs-4"
+                style={{ color: "#198754" }}
+                aria-label="Instagram"
+              ></span>
+            </Link>
           </div>
         </div>
 
