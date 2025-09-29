@@ -11,7 +11,19 @@ function HomeLayout() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-9 py-5">
-          <PostSlider />
+          <div className="row">
+            <div className='col-3'>
+              <div className="card" style={{width: "18rem"}}>
+                <img src={'../../assets/images/placeholder.webp'} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                  <a href="#" className="btn btn-link">Lire plus</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
         <nav id="sidebar" className="col-3">
@@ -86,19 +98,6 @@ function HomeLayout() {
               </li>
             </ul>  
 
-            <div className="mb-5">
-              <h5>Tag Cloud</h5>
-              <div className="tagcloud">
-                <a href="#" className="tag-cloud-link">dish</a>
-                <a href="#" className="tag-cloud-link">menu</a>
-                <a href="#" className="tag-cloud-link">food</a>
-                <a href="#" className="tag-cloud-link">sweet</a>
-                <a href="#" className="tag-cloud-link">tasty</a>
-                <a href="#" className="tag-cloud-link">delicious</a>
-                <a href="#" className="tag-cloud-link">desserts</a>
-                <a href="#" className="tag-cloud-link">drinks</a>
-              </div>
-            </div>
             <div className="mb-5">
               <h5>Newsletter</h5>
               <form action="#" className="subscribe-form">

@@ -105,10 +105,10 @@ function PostSlider() {
                         </div>
                     </a>
                     <div className="text border border-top-0 p-4">
-                        <h3 className="heading">
+                        <h3 className="heading fs-5">
                         <a href="#">Finance And Legal Working Streams Occur Throughout</a>
                         </h3>
-                        <p>
+                        <p className='fs-6'>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.
@@ -140,10 +140,10 @@ function PostSlider() {
                         </div>
                     </a>
                     <div className="text border border-top-0 p-4">
-                        <h3 className="heading">
+                        <h3 className="heading fs-5">
                         <a href="#" >Finance And Legal Working Streams Occur Throughout</a>
                         </h3>
-                        <p>
+                        <p className='fs-6'>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.
@@ -178,12 +178,12 @@ function PostSlider() {
                         </div>
                     </a>
                     <div className="text border border-top-0 p-4">
-                        <h3 className="heading">
+                        <h3 className="heading fs-5">
                         <a href="#"
                             >Finance And Legal Working Streams Occur Throughout</a
                         >
                         </h3>
-                        <p>
+                        <p className='fs-6'>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.
@@ -219,12 +219,12 @@ function PostSlider() {
                         </div>
                     </a>
                     <div className="text border border-top-0 p-4">
-                        <h3 className="heading">
+                        <h3 className="heading fs-5">
                         <a href="#"
                             >Finance And Legal Working Streams Occur Throughout</a
                         >
                         </h3>
-                        <p>
+                        <p className='fs-6'>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.
@@ -260,12 +260,12 @@ function PostSlider() {
                         </div>
                     </a>
                     <div className="text border border-top-0 p-4">
-                        <h3 className="heading">
+                        <h3 className="heading fs-5">
                         <a href="#"
                             >Finance And Legal Working Streams Occur Throughout</a
                         >
                         </h3>
-                        <p>
+                        <p className='fs-6'>
                         Far far away, behind the word mountains, far from the
                         countries Vokalia and Consonantia, there live the blind
                         texts.
