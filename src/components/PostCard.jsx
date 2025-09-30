@@ -1,43 +1,31 @@
-import React from 'react'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import placeholder from "/img/placeholder.webp";
 
 function PostCard() {
   return (
-    <div className="item">
-        <div className="blog-entry">
-            <a href="#" className="block-20 d-flex align-items-start">
-                <div className="meta-date text-center p-2">
-                    <span className="day">26</span>
-                    <span className="mos">Nov.</span>
-                    <span className="yr">2019</span>
-                </div>
-            </a>
-            <div className="text border border-top-0 p-4">
-                <h3 className="heading">
-                    <a href="#">Finance And Legal Working Streams Occur Throughout</a>
-                </h3>
-                <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts.
+    <div className="row">
+      <div className="col-9 py-5">
+        <div className="row">
+          <div className="col-3">
+            <div className="card" style={{ width: "18rem" }}>
+              <img src={placeholder} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
                 </p>
-                <div className="d-flex align-items-center mt-4">
-                    <p className="mb-0">
-                    <a href="#" className="btn btn-primary"
-                        >Read More
-                        <span className="ion-ios-arrow-round-forward"></span
-                    ></a>
-                    </p>
-                    <p className="ml-auto meta2 mb-0">
-                    <a href="#" className="mr-2">Admin</a>
-                    <a href="#" className="meta-chat">
-                        <span className="ion-ios-chatboxes"></span> 3
-                    </a>
-                    </p>
-                </div>
+                <a href="#" className="btn btn-link">
+                  Lire plus
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
   );
 }
 
-export default PostCard
+export default PostCard;

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "../assets/styles/Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar2 = () => {
   const location = useLocation();
 
   const sidebarData = [
@@ -49,43 +50,42 @@ const Sidebar = () => {
   ];
 
   return (
-    <nav id="sidebar" className="col-3 d-flex justify-content-start">
-      <div className="p-4 pt-5">
-        {sidebarData.map((section, idx) => (
-          <div key={idx} className="mb-4">
-            <h5>{section.title}</h5>
-            <ul className="list-unstyled components mb-3">
-              {section.items.map((item, itemIdx) => (
-                <li key={itemIdx}>
-                  <Link
-                    to={item.path}
-                    className={location.pathname === item.path ? "active" : ""}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <div className="mb-5">
-          <h5>Newsletter</h5>
-          <form action="#" className="subscribe-form">
-            <div className="form-group d-flex">
-              <div className="icon">
-                <span className="icon-paper-plane"></span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter Email Address"
-              />
+    <div className="sidebar-container bg-light border-end">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid flex-column align-items-stretch">
+          {sidebarData.map((section, index) => (
+            <div key={index} className="sidebar-section w-100">
+              <h6 className="sidebar-title px-3 py-2 mb-0 bg-primary text-white fw-bold">
+                {section.title}
+              </h6>
+              <ul className="navbar-nav flex-column w-100">
+                {section.items.map((item, itemIndex) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <li key={itemIndex} className="nav-item">
+                      <Link
+                        to={item.path}
+                        className={`nav-link sidebar-link px-3 py-2 text-decoration-none ${
+                          isActive ? "active" : "text-dark"
+                        }`}
+                      >
+                        {item.name}
+                        {isActive && (
+                          <span className="visually-hidden">(current)</span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+              {index < sidebarData.length - 1 && <div className="my-2"></div>}
             </div>
-          </form>
+          ))}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
-export default Sidebar;
+export default Sidebar2;
+
