@@ -8,7 +8,7 @@ const NewsScreen = () => {
       category: 'Annonces',
       description: 'L\'ONPR annonce le lancement de sa nouvelle grille de programmes radio et télévision avec des émissions innovantes et des créneaux dédiés à l\'information locale.',
       isPublished: true,
-      isFeatured: true,
+      isFeatured: true, 
       publishDate: '2024-03-15',
       views: 1245,
       author: 'Direction ONPR'
@@ -179,10 +179,6 @@ const NewsScreen = () => {
 
   return (
     <>
-      {/* Bootstrap & PrimeIcons CSS */}
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/6.0.1/primeicons.min.css" rel="stylesheet" />
-
       <div className="container-fluid p-4">
         {/* Header */}
         <div className="row mb-4">
