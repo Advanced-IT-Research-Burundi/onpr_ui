@@ -31,23 +31,6 @@ p {
   font-weight: 300;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
 a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
@@ -79,20 +62,20 @@ a:hover {
   z-index: 1999;
   position: relative;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 @media (max-width: 991.98px) {
   .site-navbar {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 .site-navbar .toggle-button {
-  position: absolute;
-  right: 0px;
+  /* position: absolute;
+  right: 0px; */
 }
 .site-navbar .site-logo {
-  position: absolute;
+  position: relative;
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -132,7 +115,7 @@ a:hover {
   text-decoration: none !important;
 }
 .site-navbar .site-navigation .site-menu > li > a:hover {
-  color: #007bff;
+  color: #198754 !important;
 }
 .site-navbar .site-navigation .site-menu .has-children {
   position: relative;
@@ -325,13 +308,20 @@ a:hover {
 .site-mobile-menu .site-mobile-menu-header {
   width: 100%;
   float: left;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close {
   float: right;
-  margin-top: 8px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
+
+.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close:hover{
+  background-color: #f8f9fa;
+}
+
 .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span {
   font-size: 30px;
   display: inline-block;
@@ -365,7 +355,7 @@ a:hover {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  padding: 0 20px 20px 20px;
+  padding: 0 10px 20px 5px;
   height: calc(100vh - 52px);
   padding-bottom: 150px;
 }
@@ -382,7 +372,7 @@ a:hover {
   color: #212529;
 }
 .site-mobile-menu .site-nav-wrap a:hover {
-  color: #007bff;
+  color: #198754;
 }
 .site-mobile-menu .site-nav-wrap li {
   position: relative;
@@ -390,7 +380,7 @@ a:hover {
 }
 
 .site-mobile-menu .site-nav-wrap li .nav-link.active {
-  color: #007bff;
+  color: #198754;
 }
 .site-mobile-menu .site-nav-wrap .arrow-collapse {
   position: absolute;
@@ -434,7 +424,7 @@ a:hover {
 }
 .site-mobile-menu .site-nav-wrap > li > a {
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 16px;
 }
 .site-mobile-menu .site-nav-wrap > li > ul {
   padding: 0;
