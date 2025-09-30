@@ -72,7 +72,7 @@ export default function Header() {
         className="site-navbar shadow-sm js-sticky-header site-navbar-target"
         role="banner"
       >
-        <div className="container-fluid">
+        <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <div className="site-logo">
               <a href="index.html" className="text-black">

@@ -14,7 +14,9 @@ function HomeLayout() {
       <Hero />
       <div className="container-fluid p-5">
         <div className="row">
-          <Outlet />
+          <div className="col-9">
+            <Outlet />
+          </div>
           <Sidebar />
         </div>
       </div>
