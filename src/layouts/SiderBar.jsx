@@ -8,9 +8,9 @@ const Sidebar = () => {
     {
       title: "DIRECTION GENERALE",
       items: [
-        { name: "Secrétariat", path: "/secretariat" },
-        { name: "Conseillers", path: "/conseillers" },
-        { name: "Agences", path: "/agences" },
+        { name: "Secrétariat", path: "secretariat" },
+        { name: "Conseillers", path: "conseillers" },
+        { name: "Agences", path: "agences" },
         {
           name: "Cellule Communication et Relations Publiques",
           path: "/communication",
@@ -62,14 +62,16 @@ const Sidebar = () => {
                   const isActive = location.pathname === item.path;
                   return (
                     <li key={itemIndex} className="nav-item">
-                      <Link 
+                      <Link
                         to={item.path}
                         className={`nav-link sidebar-link px-3 py-2 text-decoration-none ${
-                          isActive ? 'active' : 'text-dark'
+                          isActive ? "active" : "text-dark"
                         }`}
                       >
                         {item.name}
-                        {isActive && <span className="visually-hidden">(current)</span>}
+                        {isActive && (
+                          <span className="visually-hidden">(current)</span>
+                        )}
                       </Link>
                     </li>
                   );
@@ -77,10 +79,10 @@ const Sidebar = () => {
               </ul>
               {index < sidebarData.length - 1 && <div className="my-2"></div>}
             </div>
-          </form>
+          ))}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

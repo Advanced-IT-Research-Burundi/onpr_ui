@@ -9,12 +9,17 @@ import SignInScreen from "./pages/SignInScreen.jsx";
 import InfoScreen from "./pages/InfoScreen.jsx";
 import ContactScreen from "./pages/ContactScreen.jsx";
 import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
+import PostNotes from "./components/PostNotes.jsx";
+import Secretariat from "./pages/secretariat.jsx";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="home" element={<HomeLayout />} />
+        <Route path="/home/" element={<HomeLayout />}>
+          <Route path="actualites" element={<PostNotes />} />
+          <Route path="secretariat" element={<Secretariat />} />
+        </Route>
         <Route path="about" element={<AboutScreen />} />
         <Route path="informations" element={<InfoScreen />} />
         <Route path="online-services" element={<OnlineServicesScreen />} />
