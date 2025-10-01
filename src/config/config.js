@@ -1,6 +1,6 @@
 export const API_CONFIG = {
-  BASE_URL: "http://127.0.0.1:8000/api",
-  HOST_URL: "192.168.122.1",
+  BASE_URL: "http://192.168.1.186:8000/api",
+  HOST_URL: "192.168.1.186:8000",
   // ENDPOINTS: {
   //   GET_ALL_POSTS: "/posts",
     
