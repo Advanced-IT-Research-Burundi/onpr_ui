@@ -1,12 +1,19 @@
-import React from "react";
-import posts from "../../posts.json";
+import React, { useState } from "react";
+import api from "../services/api";
 
 function PostNotes() {
+  const [data, setData] = useState();
+  api.get("/articles").then((response) => {
+    setData(response.data);
+  });
+
+  console.log(data);
   return (
     <div className="col-9">
+      {{ data }}
       <h4 className="heading-section mb-4">Actualités récentes</h4>
       <div className="row">
-        {posts.map((data, idx) => (
+        {data.map((data, idx) => (
           <div className="col-3 mb-4" key={idx}>
             <div className="card" style={{ width: "18rem" }}>
               <img

@@ -11,6 +11,8 @@ import ContactScreen from "./pages/ContactScreen.jsx";
 import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
 import PostNotes from "./components/PostNotes.jsx";
 import Secretariat from "./pages/secretariat.jsx";
+import BlogPost from "./layouts/BlogPost.jsx";
+import ArticleList from "./layouts/ArticleList.jsx";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/home/" element={<HomeLayout />}>
           <Route path="actualites" element={<PostNotes />} />
           <Route path="secretariat" element={<Secretariat />} />
+          <Route path="articles" element={<ArticleList />} />
+          <Route path="articles/:id" element={<BlogPost />} />
         </Route>
         <Route path="about" element={<AboutScreen />} />
         <Route path="informations" element={<InfoScreen />} />
