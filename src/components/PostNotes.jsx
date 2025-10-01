@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import api from "../services/api";
+import { Link } from "react-router-dom";
 
 function PostNotes() {
   const [data, setData] = useState();
-  api.get("/contacts/").then((response) => {
+  api.get("/articles/").then((response) => {
     setData(response.data);
+    console.log(response.data);
   });
 
-  console.log(data);
   return (
     <div className="col-9">
-      {JSON.stringify(data)}
+      {/* {JSON.stringify(data)} */}
       <h4 className="heading-section mb-4">Actualités récentes</h4>
       <div className="row">
         {data &&
@@ -19,8 +20,7 @@ function PostNotes() {
               <div className="card" style={{ width: "18rem" }}>
                 <img
                   src={
-                    data.url_image ||
-                    require("../../assets/img/placeholder.webp")
+                    data.image_source_url || require("./img/placeholder.webp")
                   }
                   className="card-img-top"
                   alt="..."
@@ -28,11 +28,7 @@ function PostNotes() {
                 <div className="card-body">
                   <h5 className="card-title">{data.title}</h5>
                   <p className="card-text">{data.content}</p>
-                  {data.url && (
-                    <a href={data.url} className="btn btn-link">
-                      Lire plus
-                    </a>
-                  )}
+                  {data.id && <Link to={"./" + data.id}>Lire plus</Link>}
                 </div>
               </div>
             </div>

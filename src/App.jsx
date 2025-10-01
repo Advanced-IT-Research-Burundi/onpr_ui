@@ -22,7 +22,7 @@ function App() {
           <Route path="actualites" element={<PostNotes />} />
           <Route path="secretariat" element={<Secretariat />} />
           <Route path="articles" element={<ArticleList />} />
-          <Route path="articles/:id" element={<BlogPost />} />
+          <Route path="actualites/:id" element={<BlogPost />} />
         </Route>
         <Route path="about" element={<AboutScreen />} />
         <Route path="informations" element={<InfoScreen />} />

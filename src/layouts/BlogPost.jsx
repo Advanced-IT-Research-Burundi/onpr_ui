@@ -24,7 +24,7 @@ const BlogPost = () => {
         className="card p-3"
         dangerouslySetInnerHTML={{ __html: article.body }}
       ></div>
-      <Link to="/articles" className="btn btn-secondary mt-3">
+      <Link to="/home/actualites" className="btn btn-secondary mt-3">
         ⬅ Retour
       </Link>
     </div>
