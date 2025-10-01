@@ -9,20 +9,25 @@ import SignInScreen from "./pages/SignInScreen.jsx";
 import InfoScreen from "./pages/InfoScreen.jsx";
 import ContactScreen from "./pages/ContactScreen.jsx";
 import OnlineServicesScreen from "./pages/OnlineServicesScreen.jsx";
-import PostNotes from "./components/PostNotes.jsx";
+import PostNotes from "./components/ListeArticles.jsx";
 import Secretariat from "./pages/secretariat.jsx";
-import BlogPost from "./layouts/BlogPost.jsx";
+import BlogPost from "./layouts/ArticleDetail.jsx";
 import ArticleList from "./layouts/ArticleList.jsx";
+import ListeArticles from "./components/ListeArticles.jsx";
+import ListeAnnonces from "./components/ListeAnnonces.jsx";
+import AnnonceDetail from "./layouts/AnnonceDetail.jsx";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/home/" element={<HomeLayout />}>
-          <Route path="actualites" element={<PostNotes />} />
+          <Route path="actualites" element={<ListeArticles />} />
+          <Route path="annonces" element={<ListeAnnonces />} />
           <Route path="secretariat" element={<Secretariat />} />
           <Route path="articles" element={<ArticleList />} />
           <Route path="actualites/:id" element={<BlogPost />} />
+          <Route path="annonces/:id" element={<AnnonceDetail />} />
         </Route>
         <Route path="about" element={<AboutScreen />} />
         <Route path="informations" element={<InfoScreen />} />

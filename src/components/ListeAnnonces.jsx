@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import api from "../services/api";
 import { Link } from "react-router-dom";
 
-function PostNotes() {
+function ListeAnnonces() {
   const [data, setData] = useState();
-  api.get("/articles/").then((response) => {
+  api.get("/annonces/").then((response) => {
     setData(response.data);
     console.log(response.data);
   });
@@ -12,19 +12,19 @@ function PostNotes() {
   return (
     <div className="col-9">
       {/* {JSON.stringify(data)} */}
-      <h4 className="heading-section mb-4">Actualités récentes</h4>
+      <h4 className="heading-section mb-4">Annonces récentes</h4>
       <div className="row">
         {data &&
           data.map((data, idx) => (
             <div className="col-3 mb-4" key={idx}>
               <div className="card" style={{ width: "18rem" }}>
-                <img
+                {/* <img
                   src={
-                    data.image_source_url || require("./img/placeholder.webp")
+                    data. || require("./img/placeholder.webp")
                   }
                   className="card-img-top"
                   alt="..."
-                />
+                /> */}
                 <div className="card-body">
                   <h5 className="card-title">{data.title}</h5>
                   <p className="card-text">{data.content}</p>
@@ -38,4 +38,4 @@ function PostNotes() {
   );
 }
 
-export default PostNotes;
+export default ListeAnnonces;
