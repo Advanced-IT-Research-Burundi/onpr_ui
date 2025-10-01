@@ -1,8 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import placeholder from "/img/placeholder.webp";
+import posts from "../../posts.json";
 
 function PostCard() {
+  const data = posts.find(
+    (item) =>
+      item.title ===
+      "Assemblée générale du personnel de l’Office National des Pensions et Risques Professionnels des Fonctionnaires, des Magistrats et des Agents de l’ordre Judiciaire"
+  );
+
+  console.log(data);
   return (
     <div className="row">
       <div className="col-9 py-5">

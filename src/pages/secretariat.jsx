@@ -1,17 +1,19 @@
 import React from "react";
+import sideBarData from "../../sideBar.json";
 
-function Secretariat(props) {
+function Secretariat() {
+  //Rendre dynaminc avec l'api ...
+
+  const data = sideBarData.find((item) => item.title === "Secretary");
+
+  console.log(data);
+
   return (
     <div className="col-9">
-      <h4 className="heading-section  mb-4">Secretariat</h4>
+      <h4 className="heading-section  mb-4">{data.title}</h4>
       <div className="row">
         <div className="col-3">
-          <div className="text-black">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-            repellendus nostrum qui, alias officia harum vero tempora sequi
-            officiis. Sint aut commodi expedita odit blanditiis eveniet ex
-            dolore nulla iusto?
-          </div>
+          <div className="text-black">{data.content}</div>
         </div>
       </div>
     </div>

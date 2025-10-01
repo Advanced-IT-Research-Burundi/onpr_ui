@@ -1,6 +1,6 @@
 import React from "react";
 
-function Secretariat(props) {
+function Conseillers(props) {
   //Rendre dynaminc avec l'api ...
   return (
     <div className="col-9">
@@ -19,4 +19,4 @@ function Secretariat(props) {
   );
 }
 
-export default Secretariat;
+export default Conseillers;
