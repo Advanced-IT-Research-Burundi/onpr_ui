@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../assets/styles/header.css";
 import "../assets/scripts/main";
 import $ from "jquery";
 import "jquery-sticky";
 import logo from "/img/onpr_logo_transparent.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Header() {
       <div className="top-bar">
         <div className="container">
           <div className="row">
-            <div className="col-12 d-flex justify-content-end align-items-center py-2">
+            <div className="col-12 d-flex justify-content-between align-items-center py-2">
               <div className="d-none d-md-inline-block">
                 <a href="#" className="">
                   <i className="pi pi-envelope"></i>{" "}
@@ -42,7 +42,7 @@ export default function Header() {
                     info@yourdomain.com
                   </span>
                 </a>
-                <span className="mx-md-2 d-inline-block"></span>
+                <span className="mx-2 d-inline-block"></span>
                 <a href="#" className="">
                   <i className="pi pi-phone"></i>{" "}
                   <span className="d-noe h6 d-md-inline-block">
